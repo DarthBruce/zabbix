@@ -5,13 +5,13 @@ docker run -d --name zabbix-web \
  -v /docker/zabbix/letsencrypt/certificates/zabbix.lincros.com.br.key:/etc/ssl/nginx/ssl.key \
  -v /docker/zabbix/ssl/dhparam.pem:/etc/ssl/nginx/dhparam.pem \
  -e ZBX_SERVER_HOST="zabbix-server" \
- -e ZBX_SERVER_NAME="Monitoring - Lincros" \
+ -e ZBX_SERVER_NAME="Monitoring" \
  -e DB_SERVER_HOST="zabbix-mysql" \
  -e DB_SERVER_PORT="3306" \
- -e MYSQL_ROOT_PASSWORD="5V%xeBzSHWBd8rMFy@" \
+ -e MYSQL_ROOT_PASSWORD="root_password" \
  -e MYSQL_DATABASE="zabbixdb" \
  -e MYSQL_USER="zabbix" \
- -e MYSQL_PASSWORD="i6@jTPR%s4fPYp8Sgm" \
+ -e MYSQL_PASSWORD="password" \
  -e PHP_TZ="America/Sao_Paulo" \
  --network=zabbix-net \
  zabbix/zabbix-web-nginx-mysql:${ZABBIX_VERSION}
