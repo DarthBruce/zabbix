@@ -1,4 +1,4 @@
- docker run -d --name zabbix-mysql \
+ RUN -d --name zabbix-mysql \
  --restart always \
  -p 3306:3306 \
  -v /docker/zabbix/mysql/data:/var/lib/mysql \
