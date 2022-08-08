@@ -1,0 +1,13 @@
+ docker run -d --name zabbix-mysql \
+ --restart always \
+ -p 3306:3306 \
+ -v /docker/zabbix/mysql/data:/var/lib/mysql \
+ -e MYSQL_ROOT_PASSWORD=5V%xeBzSHWBd8rMFy@ \
+ -e MYSQL_DATABASE=zabbixdb \
+ -e MYSQL_USER=zabbix \
+ -e MYSQL_PASSWORD=i6@jTPR%s4fPYp8Sgm \
+ --network=zabbix-net \
+ mysql:8 \
+ --default-authentication-plugin=mysql_native_password \
+ --character-set-server=utf8 \
+ --collation-server=utf8_bin

@@ -1,0 +1,4 @@
+docker run --name zabbix-java-gateway -t \
+      --network=zabbix-net \
+      --restart unless-stopped \
+      -d zabbix/zabbix-java-gateway:${ZABBIX_VERSION}

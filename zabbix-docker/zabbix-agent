@@ -1,0 +1,11 @@
+docker run -d --name zabbix-agent \
+ --hostname "$(hostname)" \
+ --privileged \
+ -v /:/rootfs \
+ -v /var/run:/var/run \
+ --restart always \
+ -p 10050:10050 \
+ -e ZBX_HOSTNAME="$(hostname)" \
+ -e ZBX_SERVER_HOST="172.17.0.1" \
+ -e ZBX_PASSIVESERVERS="${ZABBIX_IP_RANGE}" \
+ zabbix/zabbix-agent:${ZABBIX_VERSION}

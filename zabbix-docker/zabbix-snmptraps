@@ -1,0 +1,7 @@
+docker run -d --name zabbix-snmptraps -t \
+ --restart always \
+ -p 162:1162/udp \
+ -v /docker/zabbix/snmptraps:/var/lib/zabbix/snmptraps:rw \
+ -v /docker/zabbix/mibs:/usr/share/snmp/mibs:ro \
+ --network=zabbix-net \
+ zabbix/zabbix-snmptraps:${ZABBIX_VERSION}

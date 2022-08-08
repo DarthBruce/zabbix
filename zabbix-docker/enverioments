@@ -1,0 +1,8 @@
+ZABBIX_VERSION=ubuntu-6.2-latest
+
+docker pull mysql:8
+docker pull zabbix/zabbix-agent:${ZABBIX_VERSION}
+docker pull zabbix/zabbix-proxy-sqlite3:${ZABBIX_VERSION}
+docker pull zabbix/zabbix-server-mysql:${ZABBIX_VERSION}
+docker pull zabbix/zabbix-web-nginx-mysql:${ZABBIX_VERSION}
+docker pull zabbix/zabbix-snmptraps:${ZABBIX_VERSION}
