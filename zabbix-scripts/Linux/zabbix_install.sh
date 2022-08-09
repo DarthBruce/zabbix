@@ -4,15 +4,14 @@
 
 #Thank you so much @nicol1x for your help
 
-#Enverioments Config 
-$ZBX_SRV_HOST=IPv4
-
 # Step 1 = Determines the OS Distribution
 # Step 2 = Determines the OS Version ID
 # Step 3 = Downloads Zabbix-Agent2 Repository & Installs the Zabbix-Agent2
 # Step 4 = Update Zabbix-Agent2 Config, Enable Service to auto start post Boot & Restart Zabbix-Agent2
 # Step 5 = Installation Completion Greeting
 
+#Enverioments Config 
+ZBX_SRV_HOST='IPv4'
 
 function editzabbixconf()
 {
