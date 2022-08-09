@@ -19,16 +19,16 @@ echo Step 3 = Downloading Zabbix Repository and Installing Zabbix-Agent2
 echo !! 3 !! Zabbix-Agent2 Installed
 echo ========================================================================
 
-mv /etc/zabbix/zabbix_agentd2.conf /etc/zabbix/zabbix_agentd2.conf.original
-cp /etc/zabbix/zabbix_agentd2.conf.original /etc/zabbix/zabbix_agentd2.conf	
-sed -i "s+Server=127.0.0.1+Server=${ZBX_SRV_HOST}+g" /etc/zabbix/zabbix_agentd2.conf
-sed -i "s+ServerActive=127.0.0.1+ServerActive=${ZBX_SRV_HOST}:10051+g" /etc/zabbix/zabbix_agentd2.conf
-sed -i "s+Hostname=Zabbix server+Hostname=$(hostname -f)+g" /etc/zabbix/zabbix_agentd2.conf
-sed -i "s+# Timeout=3+Timeout=30+g" /etc/zabbix/zabbix_agentd2.conf
+mv /etc/zabbix/zabbix_agent2.conf /etc/zabbix/zabbix_agent2.conf.original
+cp /etc/zabbix/zabbix_agent2.conf.original /etc/zabbix/zabbix_agent2.conf	
+sed -i "s+Server=127.0.0.1+Server=${ZBX_SRV_HOST}+g" /etc/zabbix/zabbix_agent2.conf
+sed -i "s+ServerActive=127.0.0.1+ServerActive={$ZBX_SRV_HOST}:10051+g" /etc/zabbix/zabbix_agent2.conf
+sed -i "s+Hostname=Zabbix server+Hostname=$(hostname -f)+g" /etc/zabbix/zabbix_agent2.conf
+sed -i "s+# Timeout=3+Timeout=30+g" /etc/zabbix/zabbix_agent2.conf
 
 echo ========================================================================
 echo Step 4 = Working on Zabbix-Agent2 Configuration
-echo !! 4 !! Updated Zabbix-Agent2 conf file at /etc/zabbix/zabbix_agentd2.conf
+echo !! 4 !! Updated Zabbix-Agent2 conf file at /etc/zabbix/zabbix_agent2.conf
 echo !! 4 !! Enabled Zabbix-Agent2 Service to Auto Start at Boot Time
 echo !! 4 !! Restarted Zabbix-Agent2 post updating conf file
 echo ========================================================================
@@ -356,6 +356,6 @@ echo You can now add the host $(hostname -f) with IP $(hostname -i) on the Zabbi
 echo Thanks for using DarthBruce zabbix-agent2 installation script.
 echo ========================================================================
 echo To check zabbix-agent service status, you may run : service zabbix-agent2 status
-echo To check zabbix-agent config, you may run : egrep -v '"^#|^$"' /etc/zabbix/zabbix_agentd2.conf
-echo To check zabbix-agent logs, you may run : tail -f /var/log/zabbix/zabbix_agentd2.log
+echo To check zabbix-agent config, you may run : egrep -v '"^#|^$"' /etc/zabbix/zabbix_agent2.conf
+echo To check zabbix-agent logs, you may run : tail -f /var/log/zabbix/zabbix_agent2.log
 echo ========================================================================
