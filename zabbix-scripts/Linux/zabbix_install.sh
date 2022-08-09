@@ -23,8 +23,8 @@ echo ========================================================================
 
 mv /etc/zabbix/zabbix_agent2.conf /etc/zabbix/zabbix_agent2.conf.original
 cp /etc/zabbix/zabbix_agent2.conf.original /etc/zabbix/zabbix_agent2.conf	
-sed -i "s+Server=+Server=$ZBX_SRV_HOST+g" /etc/zabbix/zabbix_agent2.conf
-sed -i "s+ServerActive=+ServerActive=$ZBX_SRV_HOST+g" /etc/zabbix/zabbix_agent2.conf
+sed -i "s+Server=127.0.0.1+Server=$ZBX_SRV_HOST+g" /etc/zabbix/zabbix_agent2.conf
+sed -i "s+ServerActive=127.0.0.1+ServerActive=$ZBX_SRV_HOST+g" /etc/zabbix/zabbix_agent2.conf
 sed -i "s+Hostname=Zabbix server+Hostname=$(hostname -f)+g" /etc/zabbix/zabbix_agent2.conf
 sed -i "s+# Timeout=3+Timeout=30+g" /etc/zabbix/zabbix_agent2.conf
 
