@@ -5,7 +5,7 @@
 #Thank you so much @nicol1x for your help
 
 #Enverioments Config 
-$ZBX_SRV_HOST=172.17.0.1
+$ZBX_SRV_HOST=IPv4
 
 # Step 1 = Determines the OS Distribution
 # Step 2 = Determines the OS Version ID
